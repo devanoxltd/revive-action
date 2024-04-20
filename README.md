@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: "revive"
-        uses: devanoxLtd/revive-action@v2
+        uses: devanoxLtd/revive-action@v1
         with:
           args: lint
 ```
@@ -47,9 +47,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: "revive"
-        uses: devanoxLtd/revive-action@v2
+        uses: devanoxLtd/revive-action@v1
         with:
           args: lint --using=tlint,pint
 ```
@@ -75,12 +75,12 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
       - name: "revive"
-        uses: devanoxLtd/revive-action@v2
+        uses: devanoxLtd/revive-action@v1
         with:
           args: fix
 
@@ -129,12 +129,12 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
 
       - name: "Revive Fix"
-        uses: devanoxLtd/revive-action@v2
+        uses: devanoxLtd/revive-action@v1
         with:
           args: fix
 
