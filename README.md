@@ -2,7 +2,14 @@
 
 GitHub Action for the [Devanox Laravel Revive](https://github.com/devanoxLtd/revive) package.
 
+If your project requires PHP 8.1 use `devanoxLtd/revive-action@v2` which pulls in Laravel Revive `2.x`.
 If your project requires PHP 8.0 use `devanoxLtd/revive-action@v1` which pulls in Laravel Revive `1.x`.
+
+This action will not be able to find any additional scripts configured (`revive.json`) to run with Revive. You will have to install your dependencies and run Revive from there instead of using this action.
+
+> [!NOTE]
+> This action will **always** use the latest version of Revive.
+> If you run into situation where Revive passes locally but the action fails you should first try updating Revive locally.
 
 ## Usage
 
@@ -24,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "revive"
-        uses: devanoxLtd/revive-action@v1
+        uses: devanoxLtd/revive-action@v2
         with:
           args: lint
 ```
@@ -49,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "revive"
-        uses: devanoxLtd/revive-action@v1
+        uses: devanoxLtd/revive-action@v2
         with:
           args: lint --using=tlint,pint
 ```
@@ -80,7 +87,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: "revive"
-        uses: devanoxLtd/revive-action@v1
+        uses: devanoxLtd/revive-action@v2
         with:
           args: fix
 
@@ -134,7 +141,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: "Revive Fix"
-        uses: devanoxLtd/revive-action@v1
+        uses: devanoxLtd/revive-action@v2
         with:
           args: fix
 

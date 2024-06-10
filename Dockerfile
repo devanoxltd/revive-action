@@ -1,6 +1,6 @@
 FROM composer:latest
 
-RUN composer global require devanox/laravel-revive ^1.0 --no-progress --dev
+RUN composer global require devanox/laravel-revive ^2.0 --no-progress --dev
 ENV PATH="/tmp/vendor/bin:${PATH}"
 
 COPY "entrypoint.sh" "/entrypoint.sh"
